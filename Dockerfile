@@ -10,9 +10,10 @@ COPY tsconfig.json ./
 COPY public ./public
 COPY app ./app
 
-RUN npm run build
+RUN npm run build && \
+    addgroup -S appgroup && \
+    adduser -S appuser -G appgroup
 
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
 EXPOSE 3000
