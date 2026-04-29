@@ -5,7 +5,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-COPY . .
+COPY next.config.* ./
+COPY tsconfig.json ./
+COPY public ./public
+COPY app ./app
+
 RUN npm run build
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
