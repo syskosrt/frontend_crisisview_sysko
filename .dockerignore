@@ -1,0 +1,6 @@
+﻿node_modules
+.next
+.git
+reports
+coverage
+npm-debug.log
